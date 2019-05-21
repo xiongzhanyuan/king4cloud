@@ -1,0 +1,26 @@
+#local dev need file
+*/webapp/demo/*
+*/angular*/docs/*
+
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+**/target/**
+#*.war
+#*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+#IDEA settings
+*.idea*
+*.DS_Store
+*.iml
+**node_modules**
+**npm-debug.log
+**/overlays/**
+**/out/**
+**/dist/**

@@ -1,0 +1,11 @@
+server:
+  port: 8101
+spring:
+  application:
+    name: king-biz-account
+  profiles:
+    include: db
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}/eureka/
