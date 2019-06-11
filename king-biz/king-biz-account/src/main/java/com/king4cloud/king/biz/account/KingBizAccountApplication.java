@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
-@SpringBootApplication
+@SpringCloudApplication
 @MapperScan(basePackages = {"com.king4cloud.king"})
 public class KingBizAccountApplication {
 

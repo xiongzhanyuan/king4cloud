@@ -1,8 +1,10 @@
 server:
-  port: 8001
+  port: 8102
 spring:
   application:
     name: king-biz-user
+  profiles:
+    include: db
 eureka:
   client:
     service-url:
