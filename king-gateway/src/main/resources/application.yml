@@ -1,0 +1,33 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: king-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+      routes:
+        - id: king-biz-user
+          uri: lb://KING-BIZ-USER
+          order: 0
+          predicates:
+            - Path=/user/**
+          filters:
+            - StripPrefix=1
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}/eureka/
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
+#zuul:
+#  routes:
+#    user:
+#      path: /api-user/**
+#      serviceId: king-biz-user
+#    account:
+#      path: /api-account/**
+#      serviceId: king-biz-account

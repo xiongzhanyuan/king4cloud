@@ -19,9 +19,8 @@ public class UnStaffService extends BaseService<UnStaffMapper, UnStaff> {
     private UnAccountFeign unAccountFeign;
 
     public void regist(UnStaff unStaff) {
-        Assert.isTrue(false,"123");
+//        Assert.isTrue(false,"123");
 //        this.save(unStaff);
-
         BaseResponse response = unAccountFeign.createAccount("123123", "STAFF");
 
         log.info("返回结果:{}", response);

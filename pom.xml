@@ -36,6 +36,10 @@
         <module>king-common</module>
         <module>king-biz</module>
         <module>king-orm</module>
+        <module>king-zuul</module>
+        <module>king-zuul</module>
+        <module>king-gateway</module>
+        <module>king-test</module>
     </modules>
 
     <dependencies>

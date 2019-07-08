@@ -17,7 +17,11 @@ public class UnAccountRpc {
 
     @PostMapping("/createAccount")
     public BaseResponse createAccount(@RequestParam("customerId") String customerId, @RequestParam("customerType") String customerType) {
-        unAccountService.createAccount(customerId, customerType);
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return new BaseResponse("创建成功");
     }
 

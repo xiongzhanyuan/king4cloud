@@ -1,4 +1,4 @@
-package com.king4cloud.common.core.config;
+package com.king4cloud.king.biz.user.config;
 
 import com.king4cloud.common.core.handler.GlobalExceptionHandler;
 import org.springframework.context.annotation.Bean;

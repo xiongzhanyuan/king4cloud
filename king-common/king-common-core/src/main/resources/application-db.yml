@@ -5,9 +5,9 @@ spring:
     default-property-inclusion: non_null
   datasource:
     druid:
-      url: jdbc:mysql://rm-2ze09097i7jjsojg9o.mysql.rds.aliyuncs.com:3306/ceshibook?characterEncoding=utf-8&useSSL=false&autoReconnect=true&rewriteBatchedStatements=true
-      username: bookadmin
-      password: Ldk11268033
+      url: jdbc:mysql://127.0.0.1:3306/ceshibook?characterEncoding=utf-8&useSSL=false&autoReconnect=true&rewriteBatchedStatements=true
+      username: root
+      password: yueshen521
       driver-class-name: com.mysql.jdbc.Driver
       initial-size: 5
       min-idle: 5
