@@ -13,39 +13,31 @@ public class JWTInfo implements Serializable {
 
     private String userId;
     private String username;
-    private String unId;
-    private String campusId;
-    private String userClassType;
+    private String loginType;
 
-    public JWTInfo(String userId,String username,String unId, String campusId, String userClassType) {
+    public JWTInfo(String userId,String username,String loginType) {
         this.userId = userId;
         this.username = username;
-        this.unId = unId;
-        this.campusId = campusId;
-        this.userClassType = userClassType;
+        this.loginType = loginType;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof JWTInfo)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
 
         JWTInfo jwtInfo = (JWTInfo) o;
 
-        if (!userId.equals(jwtInfo.userId)) return false;
-        if (!username.equals(jwtInfo.username)) return false;
-        if (!unId.equals(jwtInfo.unId)) return false;
-        if (!campusId.equals(jwtInfo.campusId)) return false;
-        return userClassType.equals(jwtInfo.userClassType);
+        if (userId != null ? !userId.equals(jwtInfo.userId) : jwtInfo.userId != null) return false;
+        if (username != null ? !username.equals(jwtInfo.username) : jwtInfo.username != null) return false;
+        return loginType != null ? loginType.equals(jwtInfo.loginType) : jwtInfo.loginType == null;
     }
 
     @Override
     public int hashCode() {
-        int result = userId.hashCode();
-        result = 31 * result + username.hashCode();
-        result = 31 * result + unId.hashCode();
-        result = 31 * result + campusId.hashCode();
-        result = 31 * result + userClassType.hashCode();
+        int result = userId != null ? userId.hashCode() : 0;
+        result = 31 * result + (username != null ? username.hashCode() : 0);
+        result = 31 * result + (loginType != null ? loginType.hashCode() : 0);
         return result;
     }
 }

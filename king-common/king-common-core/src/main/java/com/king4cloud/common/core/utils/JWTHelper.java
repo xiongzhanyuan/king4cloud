@@ -21,9 +21,7 @@ public class JWTHelper {
         return Jwts.builder()
                 .setSubject(jwtInfo.getUsername())
                 .claim(CommonConstants.JWT_KEY_USER_ID, jwtInfo.getUserId())
-                .claim(CommonConstants.CONTEXT_KEY_UN_ID, jwtInfo.getUnId())
-                .claim(CommonConstants.CONTEXT_KEY_CAMPUS_ID, jwtInfo.getCampusId())
-                .claim(CommonConstants.JWT_KEY_USER_CLASS_TYPE, jwtInfo.getUserClassType())
+                .claim(CommonConstants.CONTEXT_KEY_CAMPUS_ID, jwtInfo.getLoginType())
                 .setExpiration(LocalDateTimeUtils.convertLDTToDate(LocalDateTime.now().plusSeconds(expire)))
                 .signWith(SignatureAlgorithm.RS512, SecureUtil.generatePrivateKey("RSA", priKey))
                 .compact();
@@ -41,10 +39,8 @@ public class JWTHelper {
         Jws<Claims> claimsJws = parserToken(token, pubKey);
         Claims body = claimsJws.getBody();
         Object userId = body.get(CommonConstants.JWT_KEY_USER_ID);
-        Object userClassType = body.get(CommonConstants.JWT_KEY_USER_CLASS_TYPE);
-        Object unId = body.get(CommonConstants.CONTEXT_KEY_UN_ID);
-        Object campusId = body.get(CommonConstants.CONTEXT_KEY_CAMPUS_ID);
-        return new JWTInfo(userId == null ? "" : userId.toString(), body.getSubject(), unId == null ? "" : unId.toString(), campusId == null ? "" : campusId.toString(), StrUtil.toString(userClassType));
+        Object loginType = body.get(CommonConstants.JWT_KEY_LOGIN_TYPE);
+        return new JWTInfo(userId == null ? "" : userId.toString(), body.getSubject(), StrUtil.toString(loginType));
     }
 
     /**

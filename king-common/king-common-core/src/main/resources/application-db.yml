@@ -5,7 +5,7 @@ spring:
     default-property-inclusion: non_null
   datasource:
     druid:
-      url: jdbc:mysql://127.0.0.1:3306/ceshibook?characterEncoding=utf-8&useSSL=false&autoReconnect=true&rewriteBatchedStatements=true
+      url: jdbc:mysql://127.0.0.1/ceshibook?characterEncoding=utf-8&useSSL=false&autoReconnect=true&rewriteBatchedStatements=true
       username: root
       password: yueshen521
       driver-class-name: com.mysql.jdbc.Driver
@@ -23,8 +23,26 @@ spring:
       max-pool-prepared-statement-per-connection-size: 20
       filters: stat,wall,slf4j
       connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+  # 热部署配置开启
+  devtools:
+    restart:
+      enabled: true
+  redis:
+    host: 106.12.201.221
+    port: 6379
+    password: 1q2w3e4r
+    lettuce:
+      pool:
+        max-active: 50
+        max-idle: 20
+        max-wait: 60s
+        min-idle: 5
+    database: 6
+  servlet:
+    multipart:
+      max-file-size: 10MB
 mybatis-plus:
-  #  mapper-locations:  classpath*:com/mrd/orm/mapper/**/*.xml
+  mapper-locations:  classpath*:com/mrd/orm/mapper/**/*.xml
   global-config:
     db-config:
       column-underline: true
@@ -32,3 +50,14 @@ mybatis-plus:
     map-underscore-to-camel-case: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     cache-enabled: false
+
+jwt:
+  expire: 86400
+  user-secret: "USERSECRET_DEFAULT"
+server:
+  tomcat:
+    max-threads: 1600
+    max-connections: 20000
+    accept-count: 1600
+logging:
+#  config: classpath:log/logback-spring.xml

@@ -1,10 +1,11 @@
 package com.king4cloud.test;
 
 import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class HashMapTest {
     public static void main(String[] args) {
-        HashMap<String, String> hashMap = new HashMap<>();
+        ConcurrentHashMap<String, String> hashMap = new ConcurrentHashMap<>();
         hashMap.put(null, "周瑜");
         hashMap.put("曹操", "曹操");
         hashMap.put("刘备", "刘备");
@@ -18,7 +19,7 @@ public class HashMapTest {
 //        for (int i=1; i<=10; i++) {
 //            System.out.println(i%10);
 //        }
-        System.out.println(00000010);
+        System.out.println(hashMap.get(null));
 
         System.out.println(10 >> 3);
 

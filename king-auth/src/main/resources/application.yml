@@ -1,0 +1,13 @@
+server:
+  port: 3000
+spring:
+  application:
+    name: king-auth
+  profiles:
+    include: db
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}/eureka/
+swagger:
+  base-package: com.king4cloud.king
