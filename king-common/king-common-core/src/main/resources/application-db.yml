@@ -5,9 +5,9 @@ spring:
     default-property-inclusion: non_null
   datasource:
     druid:
-      url: jdbc:mysql://127.0.0.1/ceshibook?characterEncoding=utf-8&useSSL=false&autoReconnect=true&rewriteBatchedStatements=true
+      url: jdbc:mysql://192.168.0.55/xtest?characterEncoding=utf-8&useSSL=false&autoReconnect=true&rewriteBatchedStatements=true
       username: root
-      password: yueshen521
+      password: root
       driver-class-name: com.mysql.jdbc.Driver
       initial-size: 5
       min-idle: 5

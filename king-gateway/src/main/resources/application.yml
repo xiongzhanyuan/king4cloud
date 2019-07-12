@@ -16,6 +16,13 @@ spring:
             - Path=/user/**
           filters:
             - StripPrefix=1
+        - id: king-auth
+          uri: lb://KING-AUTH
+          order: 1
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
 eureka:
   client:
     service-url:
