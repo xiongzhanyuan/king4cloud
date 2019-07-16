@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class ContextInfoHandler {
 
-    private static ThreadLocal<Map<String, Object>> threadLocal = new ThreadLocal<>();
+    private static ThreadLocal<Map<String, Object>> threadLocal = new InheritableThreadLocal<>();
 
     private static void set(String key, Object value) {
         Map<String, Object> map = threadLocal.get();
@@ -54,6 +54,14 @@ public class ContextInfoHandler {
 
     public static String getUserName() {
         return (String) get(CommonConstants.CONTEXT_KEY_USER_NAME);
+    }
+
+    public static String getToken() {
+        return (String) get(CommonConstants.AUTHORIZATION);
+    }
+
+    public static void setToken(String token) {
+        set(CommonConstants.AUTHORIZATION, token);
     }
 
     public static void remove(){

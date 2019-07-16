@@ -26,10 +26,9 @@ public class UnStaffController {
     @PostMapping("/unstaff/regist")
     public BaseResponse regist(@RequestBody UnStaff unStaff) {
         System.out.println("当前线程regist:" + Thread.currentThread().getName());
-        ContextInfoHandler.setUserId("123");
-        unStaffService.regist(unStaff);
+        BaseResponse regist = unStaffService.regist(unStaff);
 
-        return new BaseResponse("注册成功");
+        return regist;
 
     }
 

@@ -13,7 +13,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>king-common-core</module>
-        <module>king-common-security</module>
     </modules>
 
 

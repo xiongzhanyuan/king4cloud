@@ -3,11 +3,13 @@ package com.king4cloud.common.core.config;
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import com.king4cloud.common.core.context.ContextInfoHandler;
 import org.apache.ibatis.reflection.MetaObject;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
 @Component
+@ConditionalOnMissingBean(name = "MetaNoUse")
 public class MyMetaObjectHandler implements MetaObjectHandler {
     @Override
     public void insertFill(MetaObject metaObject) {

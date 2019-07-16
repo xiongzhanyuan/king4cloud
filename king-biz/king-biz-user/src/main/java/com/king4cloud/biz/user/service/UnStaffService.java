@@ -16,7 +16,7 @@ public class UnStaffService extends BaseService<UnStaffMapper, UnStaff> {
     @Autowired
     private UnAccountFeign unAccountFeign;
 
-    public void regist(UnStaff unStaff) {
+    public BaseResponse regist(UnStaff unStaff) {
 //        Assert.isTrue(false,"123");
 //        this.save(unStaff);
         System.out.println("当前线程regist:" + Thread.currentThread().getName());
@@ -24,6 +24,8 @@ public class UnStaffService extends BaseService<UnStaffMapper, UnStaff> {
         BaseResponse response = unAccountFeign.createAccount("123123", "STAFF");
 
         log.info("返回结果:{}", response);
+
+        return response;
 
     }
 

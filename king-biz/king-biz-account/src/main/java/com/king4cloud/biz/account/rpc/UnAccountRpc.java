@@ -19,7 +19,7 @@ public class UnAccountRpc {
         try {
             System.out.println("当前线程regist:" + Thread.currentThread().getName());
             System.out.println(ContextInfoHandler.getUserId());
-            Thread.sleep(3000);
+            Thread.sleep(100);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

@@ -12,7 +12,9 @@ public class CommonConstants {
     public static final String CONTEXT_KEY_USER_NAME = "currentUserName";
     public static final String CONTEXT_KEY_CAMPUS_ID = "currentCampusId";
 
-
+    public static final String AUTHORIZATION = "Authorization";
+    public final static String CLIENT_TOKEN_USER = "ClientTokenUser";
+    public final static String CLIENT_TOKEN = "ClientToken";
 
     public static final String JWT_KEY_USER_ID = "userId";
     public static final String JWT_KEY_LOGIN_TYPE = "type";
