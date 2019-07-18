@@ -29,14 +29,12 @@ public class UnStaffController {
         BaseResponse regist = unStaffService.regist(unStaff);
 
         return regist;
-
     }
 
-    @Value("${server.port}")
-    String port;
-
+    @Value("${spring.redis.port}")
+    private String text;
     @GetMapping("/hi")
-    public String home(@RequestParam(value = "name", defaultValue = "forezp") String name) {
-        return "hi " + name + " ,i am from port:" + port;
+    public String home() {
+        return text;
     }
 }

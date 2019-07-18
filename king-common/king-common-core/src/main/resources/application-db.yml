@@ -29,7 +29,7 @@ spring:
       enabled: true
   redis:
     host: 106.12.201.221
-    port: 6379
+    port: 16379
     password: 1q2w3e4r
     lettuce:
       pool:

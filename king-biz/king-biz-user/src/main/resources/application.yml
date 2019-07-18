@@ -3,8 +3,6 @@ server:
 spring:
   application:
     name: king-biz-user
-  profiles:
-    include: db
 eureka:
   client:
     service-url:
@@ -28,3 +26,5 @@ ribbon:
   ConnectTimeout: 4000
 swagger:
   base-package: com.king4cloud.king.biz.user
+app:
+  id: king-biz-user
