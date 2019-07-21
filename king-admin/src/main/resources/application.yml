@@ -1,0 +1,17 @@
+server:
+  port: 3001
+spring:
+  application:
+    name: king-admin
+  security:
+    user:
+      name: admin
+      password: 123654
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}/eureka/
+  instance:
+    metadata-map:
+      user.name: admin
+      user.password: 123654
